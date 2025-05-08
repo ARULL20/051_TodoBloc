@@ -44,7 +44,7 @@ class TodoPage extends StatelessWidget {
                           );
                           if (selectedDate != null) {
                             context.read<TodoBloc>().add(
-                                  TodoSelectedDate(date: selectedDate),
+                                  TodoSelectDate(date: selectedDate),
                                 );
                           }
                         },
@@ -82,11 +82,11 @@ class TodoPage extends StatelessWidget {
                             context.read<TodoBloc>().add(
                                   TodoEventAdd(
                                     title: _controller.text,
-                                    date: selectedDate.selectedDate!,
+                                    date: selectedDate.selectDate!,
                                   ),
                                 );
                             _controller.clear();
-                            selectedDate.selectedDate = null;
+                            selectedDate.selectDate = null;
                           }
                         }
                       },
