@@ -101,6 +101,10 @@ class TodoPage extends StatelessWidget {
                   builder: (context, state) {
                     if (state is TodoLoading) {
                       return Center(child: CircularProgressIndicator());
+                       } else if (state is TodoLoaded) {
+                      if (state.todos.isEmpty) {
+                        return Center(child: Text('Todo list is empty'));
+                      }
 
 
 
